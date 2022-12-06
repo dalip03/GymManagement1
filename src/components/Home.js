@@ -23,6 +23,19 @@ import services4 from '../Asset/img/services/services-4.jpg'
 import Iframe from 'react-iframe';
 
 
+// Default theme
+import '@splidejs/react-splide/css';
+
+// or other themes
+import '@splidejs/react-splide/css/skyblue';
+import '@splidejs/react-splide/css/sea-green';
+
+// or only core styles
+import '@splidejs/react-splide/css/core';
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+
+
 function Home(){
     return(
        <>
@@ -30,7 +43,9 @@ function Home(){
 
 {/* <!-- Hero Section Begin --> */}
     <section class="hero-section">
-        <div class="hs-slider owl-carousel">
+    <Splide class="hs-slider">
+        <SplideSlide>
+        {/* <div class="hs-slider"> */}
             <div class="hs-item set-bg-hero1">
                 <div class="container">
                     <div class="row">
@@ -44,6 +59,10 @@ function Home(){
                     </div>
                 </div>
             </div>
+            {/* </div> */}
+            </SplideSlide>
+            <SplideSlide>
+            {/* <div class="hs-slider"> */}
             <div class="hs-item set-bg-hero2" >
                 <div class="container">
                     <div class="row">
@@ -57,8 +76,12 @@ function Home(){
                     </div>
                 </div>
             </div>
-        </div>
+            {/* </div> */}
+            </SplideSlide>
+           
+        </Splide>
     </section>
+   
     {/* <!-- Hero Section End -->  */}
 
     {/* about */}

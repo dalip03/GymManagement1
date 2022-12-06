@@ -572,11 +572,13 @@ ol {
 	padding-top: 55px;
 	z-index: 99;
 }
-
 .logo a {
 	display: inline-block;
 }
 
+/* .teamd{
+    display: flex;
+} */
 .nav-menu {
 	text-align: center;
 }

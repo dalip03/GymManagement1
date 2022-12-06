@@ -8,7 +8,7 @@ import '../Asset/css/magnific-popup.css';
 // import '../Asset/css/owl.carousel.min.css';
 import '../Asset/css/slicknav.min.css';
 
-import logo from '../Asset/img/logo.png'
+import logo from '../Asset/img/logo.png';
 
 
 
@@ -66,7 +66,7 @@ function Navbar(){
             <div class="row">
               <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="/">
                             <img src={logo} alt=""/>
                         </a>
                     </div>
