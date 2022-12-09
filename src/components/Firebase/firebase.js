@@ -1,13 +1,19 @@
 import firebase from 'firebase';
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
-    apiKey: "AIzaSyAu10FPOBbr_aOUCmoOGJHSS_i8wl4OgNU",
-    authDomain: "project1-3e7fe.firebaseapp.com",
-    projectId: "project1-3e7fe",
-    storageBucket: "project1-3e7fe.appspot.com",
-    messagingSenderId: "696357853556",
-    appId: "1:696357853556:web:b2380f09aec9c0c5d13421"
-  };
+  apiKey: "AIzaSyCI3MRF-5upfJAY4HajhaU3Hr3w54Ucu60",
+  authDomain: "gymmanagement-4f0f4.firebaseapp.com",
+  projectId: "gymmanagement-4f0f4",
+  storageBucket: "gymmanagement-4f0f4.appspot.com",
+  messagingSenderId: "168170519296",
+  appId: "1:168170519296:web:05aea0adeef73c277751e5",
+  measurementId: "G-VHDW12BX3R"
+};
+
+// Initialize Firebase
 
   firebase.initializeApp(firebaseConfig);
 

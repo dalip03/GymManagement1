@@ -38,12 +38,8 @@ function Navbar(){
                 <li><a href="/plans">Our Plans</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="dropdown">
-                        <li><a href="/aboutUs">About us</a></li>
-                        <li><a href="/classes">Classes timetable</a></li>
                         <li><a href="bmi">Bmi calculate</a></li>
-                        <li><a href="/team">Our team</a></li>
                         <li><a href='/gallery'>Gallery</a></li>
-                        <li><a href="/plans">Our Plans</a></li>
                         <li><a href="/blog">Our blog</a></li>
                     </ul>
                 </li>
@@ -82,11 +78,7 @@ function Navbar(){
                             <li><a href="/plans">Our Plans</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="/aboutUs">About us</a></li>
-                                    <li><a href="/classes">Classes timetable</a></li>
                                     <li><a href="/bmi">Bmi calculate</a></li>
-                                    <li><a href="/team">Our team</a></li>
-                                    <li><a href="/plans">Our Plans</a></li>
                                     <li><a href="/gallery">Gallery</a></li>
                                     <li><a href="./blog.html">Our blog</a></li>
                                 </ul>

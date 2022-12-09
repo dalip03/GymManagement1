@@ -65,7 +65,7 @@ function Team (){
                     <div class="team-title">
                         <div class="section-title">
                             <span>Our Team</span>
-                            <h2>TRAIN WITH EXPERTS</h2>
+                            <h2 style={{color:"white"}}>TRAIN WITH EXPERTS</h2>
                         </div>
                         <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a>
                     </div>

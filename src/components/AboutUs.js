@@ -68,7 +68,7 @@ function AboutUs() {
             <div class="col-lg-12">
               <div class="section-title">
                 <span>Why chose us?</span>
-                <h2 className="head">PUSH YOUR LIMITS FORWARD</h2>
+                <h2 className="head" style={{color:"whitesmoke"}}>PUSH YOUR LIMITS FORWARD</h2>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ function AboutUs() {
               <div class="about-text">
                 <div class="section-title">
                   <span>About Us</span>
-                  <h2>What we have done</h2>
+                  <h2 style={{color:"whitesmoke"}}>What we have done</h2>
                 </div>
                 <div class="at-desc">
                   <p>

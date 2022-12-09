@@ -1,5 +1,5 @@
-import React from "react";
-// import lg from '../img/lg.png'
+import React, { useState } from "react";
+
 import Iframe from "react-iframe";
 import "../Asset/css/style.css";
 import "../Asset/css/barfiller.css";
@@ -16,7 +16,42 @@ import Navbar from "./Navbar";
 import Footer from "./footer";
 import GetInTouch from "./getInTouch";
 
+import { axios, db } from '../components/Firebase/firebase'
+
 function Contact() {
+
+// submit data in backend
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log(e)
+
+  // add data in firebase 
+  var data = new FormData(e.currentTarget);
+  
+  var name = data.get('name');
+  var email = data.get('email');
+  var tel = data.get('tel');
+  var message = data.get('message');
+
+
+ 
+  db.collection("Users")
+    .add({
+      Name: name,
+      Email: email,
+      Tel:tel,
+      Message: message,
+    })
+    .then((succ) => {
+      alert("Your Application is send to Dalip :) ");
+    })
+    .catch((err) => {
+      alert("can't send your Application , please send Again :) ");
+    });
+
+}
+// end submit data
+
   return (
     <>
       <Navbar />
@@ -48,14 +83,14 @@ function Contact() {
             <div class="col-lg-6">
               <div class="section-title contact-title">
                 <span>Contact Us</span>
-                <h2>GET IN TOUCH</h2>
+                <h2 style={{ color: "whitesmoke" }}>GET IN TOUCH</h2>
               </div>
               <div class="contact-widget">
                 <div class="cw-text">
                   <i class="fa fa-map-marker"></i>
                   <p>
-                    SCO 12-13, Gurudwara Rd, I-Block Market, Opposite durga
-                    Mata Mandir, Sarabha Nagar, Ludhiana, 
+                    SCO 12-13, Gurudwara Rd, I-Block Market, Opposite durga Mata
+                    Mandir, Sarabha Nagar, Ludhiana,
                     <br /> Punjab 141001
                   </p>
                 </div>
@@ -74,13 +109,35 @@ function Contact() {
             </div>
             <div class="col-lg-6">
               <div class="leave-comment">
-                <form  >
-                  <input type="text" name='user_name' placeholder="Name" />
-                  <input type="text" name='user_email' placeholder="Email" />
-                  <input type="tel" placeholder="Phone no." />
-                  <textarea placeholder="Comment"></textarea>
+                {/* form start */}
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                   
+                  />
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                   
+                  />
+                  <input
+                    type="tel"
+                    name="tel"
+                    placeholder="Phone no."
+                   
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                   
+                  ></textarea>
                   <button type="submit">Submit</button>
                 </form>
+
+                {/* form end  */}
               </div>
             </div>
           </div>

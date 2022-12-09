@@ -38,7 +38,7 @@ function Classes(){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>UNLIMITED CLASSES</h2>
+                        <h2 style={{color:"whitesmoke"}}>UNLIMITED CLASSES</h2>
                     </div>
                 </div>
             </div>

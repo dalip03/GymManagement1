@@ -40,23 +40,28 @@ function Gallery(){
     <div class="gallery">
         <div class="grid-sizer"></div>
         <div class="gs-item grid-wide set-bg-gallery1">
-            <a href={gallery1} class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
         </div>
         <div class="gs-item set-bg-gallery2" >
-            <a href={gallery2} class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
         </div>
         <div class="gs-item set-bg-gallery3" >
-            <a href={gallery3} class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
         </div>
         <div class="gs-item set-bg-gallery4" >
-            <a href={gallery4} class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
         </div>
         <div class="gs-item set-bg-gallery5">
-            <a href={gallery5} class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
         </div>
-        <div class="gs-item grid-wide set-bg-gallery6" >
-            <a href="img/gallery/gallery-6.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
+        <div class="gs-item  set-bg-gallery6" >
         </div>
+        <div class="gs-item  set-bg-gallery7" >
+        </div>
+        <div class="gs-item  set-bg-gallery8" >
+        </div>
+        <div class="gs-item  set-bg-gallery9" >
+        </div>
+        <div class="gs-item  set-bg-gallery10" >
+        </div>
+        <div class="gs-item  set-bg-gallery11" >
+        </div>
+        
     </div>
 </div>
 <GetInTouch/>
