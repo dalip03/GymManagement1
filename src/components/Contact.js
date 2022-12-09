@@ -47,6 +47,9 @@ const handleSubmit = (e) => {
     })
     .catch((err) => {
       alert("can't send your Application , please send Again :) ");
+
+
+      
     });
 
 }
@@ -107,9 +110,11 @@ const handleSubmit = (e) => {
                 </div>
               </div>
             </div>
+            
             <div class="col-lg-6">
               <div class="leave-comment">
                 {/* form start */}
+
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"
