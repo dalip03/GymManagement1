@@ -10,13 +10,7 @@ import '../Asset/css/magnific-popup.css';
 // import '../Asset/css/owl.carousel.min.css';
 import '../Asset/css/slicknav.min.css';
 
-import team1 from '../Asset/img/team/team-1.jpg';
-import team2 from '../Asset/img/team/team-2.jpg';
-import team3 from '../Asset/img/team/team-3.jpg';
-import team4 from '../Asset/img/team/team-4.jpg';
-import team5 from '../Asset/img/team/team-5.jpg';
-import team6 from '../Asset/img/team/team-6.jpg';
-import logo1 from '../Asset/img/logo.png';
+
 import Footer from './footer';
 import breadcrumbBg from '../Asset/img/breadcrumb-bg.jpg'; 
 import GetInTouch from './getInTouch';

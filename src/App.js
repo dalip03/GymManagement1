@@ -12,14 +12,16 @@ import Classes from './components/Classes';
 import Services from './components/Services';
 import BmiCalculator from './components/bmiCalculator';
 import Plans from './components/Plans';
-import Login from './components/Login/login';
+import SignUp from './components/SignUp';
+// import Login from './components/Login/login';
+// import SignInForm from './components/Login/SignInForm';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
 
-      <Route path="/home" element={<Home/>}/>
+      <Route path="/" element={<Home/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/plans" element={<Plans/>}/>
       <Route path="/gallery" element={<Gallery/>}/>
@@ -28,7 +30,8 @@ function App() {
       <Route path="/classes" element={<Classes/>}/>
       <Route path="/services" element={<Services/>}/>
       <Route path="/bmi" element={<BmiCalculator/>}/>
-      <Route path="/" element={<Login/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
+      {/* <Route path="/login" element={<SignInForm/>}/> */}
 
 
     </Routes>

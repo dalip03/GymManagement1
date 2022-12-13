@@ -142,12 +142,7 @@ ol {
 #demo{
 	width: 400px;
 }
-.set-bg-hero1 {
-	background-image: url('../img/hero/hero-1.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top center;
-}
+
 .set-bg-about{
 	background-image: url('../img/breadcrumb-bg.jpg');
 	background-repeat: no-repeat;
@@ -189,6 +184,80 @@ ol {
 	background-size: cover;
 	background-position: top center;
 }
+
+/* home  */
+.frm{
+	border: 1px solid rgb(226, 217, 217);
+	height: auto;
+}
+/* home end  */
+
+/* signup  */
+/* .back1{
+    height: 100vh;
+    background-image:url(../src/Components/images/bgg.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat; 
+    
+} */
+
+
+.fmm{
+    text-align: center;
+    padding: 30px;
+    box-shadow: 4px 4px 18px black;
+    margin-top: -175px;
+    background-color: rgba(106, 175, 236, 0.2);
+    font-family:'popins', sans-serif;
+}
+
+input{
+	background-color:rgba(106, 175, 236, 0.2) !important;
+	border: none !important;
+	color: white !important;
+}
+
+::placeholder{
+	/* background-color: white; */
+	color: white !important;
+}
+
+.fm{
+    text-align: center;
+    padding: 30px;
+    box-shadow: 4px 4px 18px black;
+    margin-top: 90px;
+    background-color: rgba(255, 255, 255, .9);
+    font-family:'popins', sans-serif;
+}
+.fm .form-group input{
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    padding: 10px 5px ;
+    border: 0;
+    border-bottom: 1px solid #656565;
+    outline: none;
+    transition: all 0.2s;
+}
+.fm .form-group input:focus{
+    border-color: #bababa;
+}
+.fm a{
+text-decoration: underline;
+}
+.imm img{
+    height: 150px;
+    width: 150px;
+
+}
+/* login form  */
+
+
+/* end  */
+
+
 .set-bg-team5{
 	background-image: url('../img/team/team-5.jpg');
 	background-repeat: no-repeat;
@@ -362,16 +431,16 @@ ol {
 	background-position: top center;
 }
 .set-bg-hero1{
-	background-image: url('../img/hero/hero-1.jpg');
+	background-image: url('../img/cross6.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
 }
 .set-bg-hero2{
-	background-image: url('../img/hero/hero-2.jpg');
+	background-image: url('../img/cross6.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top center;
+	background-position:top center;
 }
 .set-bg-team1{
 	background-image: url('../img/team/team-1.jpg');
