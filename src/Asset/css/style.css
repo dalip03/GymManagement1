@@ -144,14 +144,21 @@ ol {
 }
 
 .set-bg-about{
-	background-image: url('../img/breadcrumb-bg.jpg');
+	background-image: url('../img/crossfit3.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top center;
+	background-position:top center;
+}
+
+.set-bg-trainers{
+	background-image: url('../img/contact-breadcrumb.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:top center;
 }
 
 .set-bg-about2{
-	background-image: url('../img/about-us.jpg');
+	background-image: url('../img/rohish.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;

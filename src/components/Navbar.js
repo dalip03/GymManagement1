@@ -34,7 +34,7 @@ function Navbar(){
                 <li><a href='/contact'>About Us</a></li>
                 <li><a href="/classes">Classes</a></li>
                 <li><a href="/services">Services</a></li>
-                <li><a href="/team">Our Team</a></li>
+                <li><a href="/team">Trainers</a></li>
                 <li><a href="/plans">Our Plans</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="dropdown">
@@ -74,7 +74,7 @@ function Navbar(){
                             <li><a href="/aboutUs">About Us</a></li>
                             <li><a href="/classes">Classes</a></li>
                             <li><a href="/services">Services</a></li>
-                            <li><a href="/team">Our Team</a></li>
+                            <li><a href="/team">Trainers</a></li>
                             <li><a href="/plans">Our Plans</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">

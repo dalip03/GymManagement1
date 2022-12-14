@@ -35,15 +35,15 @@ function Team (){
 
 <Navbar/>
 {/* <!-- Breadcrumb Section Begin --> */}
-    <section class="breadcrumb-section set-bg-classes" >
+    <section class="breadcrumb-section set-bg-trainers" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Our Team</h2>
+                        <h2>Expert Trainers</h2>
                         <div class="bt-option">
                             <a href="/">Home</a>
-                            <span>Our team</span>
+                            <span>Trainers</span>
                         </div>
                     </div>
                 </div>
