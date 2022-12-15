@@ -13,6 +13,7 @@ import Services from './components/Services';
 import BmiCalculator from './components/bmiCalculator';
 import Plans from './components/Plans';
 import SignUp from './components/SignUp';
+import Product from './components/Products/Product';
 // import Login from './components/Login/login';
 // import SignInForm from './components/Login/SignInForm';
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/services" element={<Services/>}/>
       <Route path="/bmi" element={<BmiCalculator/>}/>
       <Route path="/signup" element={<SignUp/>}/>
+      <Route path='/product' element={<Product/>}/>
       {/* <Route path="/login" element={<SignInForm/>}/> */}
 
 

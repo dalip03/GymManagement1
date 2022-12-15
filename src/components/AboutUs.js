@@ -15,13 +15,6 @@ import logo from "../Asset/img/logo.png";
 import logo1 from "../Asset/img/logo.png";
 import Footer from "./footer";
 
-import team1 from "../Asset/img/team/team-1.jpg";
-import team2 from "../Asset/img/team/team-2.jpg";
-import team3 from "../Asset/img/team/team-3.jpg";
-import team4 from "../Asset/img/team/team-4.jpg";
-import team5 from "../Asset/img/team/team-5.jpg";
-import team6 from "../Asset/img/team/team-6.jpg";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import GetInTouch from "./getInTouch";
@@ -78,7 +71,7 @@ function AboutUs() {
               <div class="cs-item">
                 <span class="flaticon-034-stationary-bike"></span>
                 <h4>Modern equipment</h4>
-                <p>
+                <p style={{textAlign:'justify'}}>
                   Maintaining a workout routine is difficult without having the
                   right gym equipment in place. The features and functions that
                   come with gym equipment help you monitor your progress and
@@ -90,7 +83,7 @@ function AboutUs() {
               <div class="cs-item">
                 <span class="flaticon-033-juice"></span>
                 <h4>Healthy nutrition plan</h4>
-                <p>
+                <p style={{textAlign:'justify'}}>
                   The 3 keys to optimal nutrition are balance, quality, and
                   timing. To maintain balance, eat from all or most of the food
                   groups. Eat the right amount for your activity and performance
@@ -102,7 +95,7 @@ function AboutUs() {
               <div class="cs-item">
                 <span class="flaticon-002-dumbell"></span>
                 <h4>Proffesponal training plan</h4>
-                <p>
+                <p style={{textAlign:'justify'}}>
                   Here is a list of their offerings: Personal Trainers, Weight
                   Gain Program, Weight Loss Program. Of course, a gym may help
                   you build muscles and look fab. But remember people who
@@ -115,7 +108,7 @@ function AboutUs() {
               <div class="cs-item">
                 <span class="flaticon-014-heart-beat"></span>
                 <h4>Unique to your needs</h4>
-                <p>
+                <p style={{textAlign:'justify'}}>
                   All scientific evidence and studies prove that being
                   physically active enables you to lead a healthier life. Not
                   just your physical health, but even your emotional and mental

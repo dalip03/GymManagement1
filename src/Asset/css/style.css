@@ -109,9 +109,75 @@ ol {
 	margin: 0;
 }
 
+/* Products */
+.set-bg-product{
+	background-image: url('../img/Product/product.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product1{
+	background-image: url('../img/Product/product1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+}
+
+.set-bg-product2{
+	background-image: url('../img/Product/product2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product3{
+	background-image: url('../img/Product/product3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product4{
+	background-image: url('../img/Product/product4.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product5{
+	background-image: url('../img/Product/product5.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product6{
+	background-image: url('../img/Product/product6.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product7{
+	background-image: url('../img/Product/product7.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+.set-bg-product8{
+	background-image: url('../img/Product/product8.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:  center;
+}
+
+
 /*---------------------
   Helper CSS
------------------------*/
+-----
+------------------*/
 
 .section-title {
 	margin-bottom: 45px;

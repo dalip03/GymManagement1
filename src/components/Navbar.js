@@ -35,12 +35,13 @@ function Navbar(){
                 <li><a href="/classes">Classes</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/team">Trainers</a></li>
-                <li><a href="/plans">Our Plans</a></li>
+                <li><a href="/product"></a>Products</li>
+                <li><a href='/gallery'>Gallery</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="dropdown">
                         <li><a href="bmi">Bmi calculate</a></li>
-                        <li><a href='/gallery'>Gallery</a></li>
                         <li><a href="/blog">Our blog</a></li>
+                        <li><a href="/plans">Our Plans</a></li>
                     </ul>
                 </li>
                 <li><a href="/contact">Contact</a></li>
@@ -75,11 +76,12 @@ function Navbar(){
                             <li><a href="/classes">Classes</a></li>
                             <li><a href="/services">Services</a></li>
                             <li><a href="/team">Trainers</a></li>
-                            <li><a href="/plans">Our Plans</a></li>
+                            <li><a href="/product">Products</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="/bmi">Bmi calculate</a></li>
-                                    <li><a href="/gallery">Gallery</a></li>
+                                    <li><a href="/plans">Our Plans</a></li>
                                     <li><a href="./blog.html">Our blog</a></li>
                                 </ul>
                             </li>
@@ -88,6 +90,7 @@ function Navbar(){
                     </nav>
                 </div>
                 <div class="col-lg-3">
+                    {/* search */}
                     <div class="top-option">
                         <div class="to-search search-switch">
                             <i class="fa fa-search"></i>
