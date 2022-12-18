@@ -14,6 +14,8 @@ import BmiCalculator from './components/bmiCalculator';
 import Plans from './components/Plans';
 import SignUp from './components/SignUp';
 import Product from './components/Products/Product';
+import Text from './components/Products/textAnimation';
+
 // import Login from './components/Login/login';
 // import SignInForm from './components/Login/SignInForm';
 
@@ -33,6 +35,8 @@ function App() {
       <Route path="/bmi" element={<BmiCalculator/>}/>
       <Route path="/signup" element={<SignUp/>}/>
       <Route path='/product' element={<Product/>}/>
+      <Route path='/text' element={<Text/>}/>
+
       {/* <Route path="/login" element={<SignInForm/>}/> */}
 
 

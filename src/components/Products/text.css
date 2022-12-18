@@ -1,0 +1,56 @@
+/* .logo h1{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 52px;
+    margin-top: 50px;
+}
+.logo{
+    background-color: rgb(197, 238, 225);
+    height: 200px;
+}
+
+.logo h1:nth-child(2){
+    margin-top: -70px;
+    color: tomato;
+    animation: anm 3s ease-in-out infinite;
+}
+
+@keyframes anm {
+0%,  
+100% {
+    clip-path: polygon(
+        0% 0%,
+        14% 0%,
+        27% 14%,
+        40% 26%,
+        53% 38%,
+        67% 48%,
+        80% 51%,
+        100% 49%,
+        100% 49%,
+        100% 99%,
+        0% 99%   
+    );
+}
+
+50%{
+    clip-path: polygon(
+
+    0% 59%,
+    14% 54%,
+    30% 53%,
+    45% 56%,
+    57% 46%,
+    66% 31%,
+    78% 17%,
+    100% 0%,
+    100% 99%,
+    0%   99%
+    )
+}
+}
+
+.ds{
+    background-color: rgb(197, 238, 225);
+    height: 200px;  
+} */
