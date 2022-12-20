@@ -109,7 +109,73 @@ ol {
 	margin: 0;
 }
 
+/* add client */
+
+
+.dva {
+	background-color: rgb(127, 255, 212, .6);
+	padding: 20px 30px;
+	text-align: center;
+	margin-left: 400px;
+}
+
+
+.bta {
+	background-color: yellowgreen;
+	color: black;
+	font-weight: bold;
+}
+
+.bta:hover {
+	background-color: rgb(249, 239, 239);
+	font-size: 17px;
+	padding: 2px;
+}
+/* add client end  */
+
+/* Admin start */
+
+.rw{
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+}
+.adf{
+	border: 1px solid rgb(244, 243, 243);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: rgba(142, 205, 195, .2);
+
+}
+.fm2{
+	margin-top: 20px;
+	/* border: 1px solid white; */
+}
+.adform{
+	background-color: #000000;
+	
+	color: white;
+	padding: 10px;
+}
+
+.adform h1{
+	color: white;
+	margin-left: 25px;
+}
+
+thead{
+	color: white;
+}
+tr{
+	color: white;
+}
+
+/* Admi End  */
+
 /* Products */
+.dv{
+	background-color: white;
+}
 .set-bg-product{
 	background-image: url('../img/Product/product.jpg');
 	background-repeat: no-repeat;
@@ -183,6 +249,7 @@ ol {
 	margin-bottom: 45px;
 	text-align: center;
 }
+
 
 .section-title span {
 	font-size: 16px;
@@ -381,6 +448,12 @@ text-decoration: underline;
 	background-position: top center;
 }
 
+.set-bg-clss1{
+	background-image: url('../img/clss1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
 .set-bg-class1{
 	background-image: url('../img/class/classes-2.jpg');
 	background-repeat: no-repeat;

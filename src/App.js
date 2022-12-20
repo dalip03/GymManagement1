@@ -15,6 +15,11 @@ import Plans from './components/Plans';
 import SignUp from './components/SignUp';
 import Product from './components/Products/Product';
 import Text from './components/Products/textAnimation';
+import Admin from './components/Admin/admin';
+import User from './components/User';
+import AddClients from './components/Admin/addClients';
+import Client from './components/Admin/clients';
+import AdminLogin from './components/AdminLogin';
 
 // import Login from './components/Login/login';
 // import SignInForm from './components/Login/SignInForm';
@@ -36,6 +41,14 @@ function App() {
       <Route path="/signup" element={<SignUp/>}/>
       <Route path='/product' element={<Product/>}/>
       <Route path='/text' element={<Text/>}/>
+      <Route path='/admin' element={<Admin/>}/>
+      <Route path='/AdminLogin' element={<AdminLogin/>}/>
+      <Route path='/user' element={<User/>}/>
+      <Route path='/addClient' element={<AddClients/>}/>
+      <Route path='/client' element={<Client/>}/>
+
+
+
 
       {/* <Route path="/login" element={<SignInForm/>}/> */}
 

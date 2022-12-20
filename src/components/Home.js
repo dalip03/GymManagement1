@@ -37,7 +37,7 @@ function login(){
 
   auth.signInWithEmailAndPassword(email,password).then((user)=>{
    console.log({user})
-   navi('/aboutUs')
+   navi('/admin')
 
   })
   //  console.log('yes')
