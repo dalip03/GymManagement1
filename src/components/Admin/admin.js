@@ -2,27 +2,37 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../AdminNavbar";
 import { auth, db } from "../Firebase/firebase";
+import firebase  from "firebase";
 
 function Admin() {
 
   var navi = useNavigate()
-                             
+  const [img, setimg] = useState("")
+  const [name, setname] = useState("")
+  const [dec, setdec] = useState("")
+  const [price, setprice] = useState("")
+  const [type, settype] = useState("")
 
-  const[img,setImg] = useState('')
-  const[name,setName] =useState('')
-  const[dec,setDec] =useState('')
-  const[price,setPrice] =useState('')
-  const[type,setType] =useState('')
-
-
-  function add(e){
-       e.preventDefault();
-   db.collection('data').add(img, name, dec, price, type).then((succ)=>{
-    alert(" data store ")
-   })
-  
-    }
-    
+const add = (e) => {
+    var st_ref = Storage.ref("/Products/" + img.name).put(img);
+    st_ref.then(function (succ) {
+      st_ref.snapshot.ref.getDownloadURL().then(function (suc) {
+        db.collection("Products")
+          .add({
+            Name: name,
+            Type: type,
+            Dec:  dec,
+            Price: price,
+            TimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+            
+          })
+          .then(function (sic) {
+            alert("Product Added");
+            e.target.reset();
+});
+      });
+    });
+  };
 
   return (
     <>
@@ -60,39 +70,42 @@ function Admin() {
                     type="file"
                     className=" form-control"
                     placeholder="Product Image*"
-                    onChange={(e) => setImg(e.target.value)}
-                    
+                    onChange={(e) => setimg(e.target.files[0])}                    
                   />
                 </div>
                 <div className="form-group">
                   <input
                     type="text"
+                    value={name}
                     className="  form-control"
                     placeholder="Product Name*"
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setname(e.target.value)}
 
                   />
                 </div>
                 <div className="form-group">
                   <input
                     type="text"
+                    value={dec}
                     className=" form-control"
                     placeholder="Description*"
-                    onChange={(e) => setDec(e.target.value)}
+                    onChange={(e) => setdec(e.target.value)}
 
                   />
                 </div>
                 <div className="form-group">
                   <input
                     type="text"
+                    value={price}
                     className=" form-control"
                     placeholder=" Price"
-                    onChange={(e) => setPrice(e.target.value)}
+                    onChange={(e) => setprice(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
-                  <select className="form-control"      
-                   onChange={(e) => setType(e.target.value)}
+                  <select className="form-control" 
+                  value={type}     
+                   onChange={(e) => settype(e.target.value)}
 >
                     <option  value={"Shirt"}> Types </option>
                     <option value={"Pent"}> Pre Workout </option>

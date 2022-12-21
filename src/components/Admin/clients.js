@@ -48,8 +48,6 @@ function Client(){
             <tr >
               {/* <tr key={row.id}> */}
               
-
-              
                 <td></td>
                 <td></td>
                 <td></td>

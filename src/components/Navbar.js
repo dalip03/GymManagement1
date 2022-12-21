@@ -40,7 +40,7 @@ function Navbar(){
                 <li><a href="#">Pages</a>
                     <ul class="dropdown">
                         <li><a href="bmi">Bmi calculate</a></li>
-                        <li><a href="/blog">Our blog</a></li>
+                        <li><a href="/adminLogin">Admin</a></li>
                         <li><a href="/plans">Our Plans</a></li>
                     </ul>
                 </li>
@@ -82,7 +82,7 @@ function Navbar(){
                                 <ul class="dropdown">
                                     <li><a href="/bmi">Bmi calculate</a></li>
                                     <li><a href="/plans">Our Plans</a></li>
-                                    <li><a href="/admin">Admin</a></li>
+                                    <li><a href="/adminLogin">Admin</a></li>
                                 </ul>
                             </li>
                             <li><a href="/contact">Contact</a></li>

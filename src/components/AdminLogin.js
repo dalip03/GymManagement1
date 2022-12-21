@@ -12,7 +12,7 @@ const[password,setPassword] =useState('')
 
 function login(){
 
-  auth.signInWithPhoneNumber(email,password).then((admin)=>{
+  auth.signInWithEmailAndPassword(email,password).then((admin)=>{
    console.log({admin})
    navi('/admin')
 
