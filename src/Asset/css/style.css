@@ -176,6 +176,13 @@ tr{
 .dv{
 	background-color: white;
 }
+.hda h1{
+	color: white;
+	align-items: center !important;
+}
+.anmol{
+	border: 2px solid white;
+}
 .set-bg-product{
 	background-image: url('../img/Product/product.jpg');
 	background-repeat: no-repeat;
