@@ -170,19 +170,117 @@ tr{
 	color: white;
 }
 
+.papr{
+	/* border: 2px solid red; */
+	/* background-color: whitesmoke; */
+	display: grid;
+	grid-template-columns:repeat(4, minmax(0, 1fr));
+}
+
 /* Admi End  */
 
-/* Products */
+/* User css */
 .dv{
+    /* background-color: greenyellow; */
+    border: 1px solid rgba(0, 0, 0, 0.045);
+    height: 350px;
+
+}
+
+.dv1{
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 200px;
+
+}
+
+.pd{
+    border: 1px solid rgba(0, 0, 0, .1);
+
+}   
+.pp{
+    font-weight: bolder;
+    font-size: large;
+}
+.box{
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 	background-color: white;
 }
-.hda h1{
-	color: white;
-	align-items: center !important;
+.box1{
+    /* border: 2px solid rgb(213, 197, 197, .3); */
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    
+}
+.pr{
+    font-weight: bolder;
+}
+.h{
+    text-align: center;
+    font-weight: bold;
+	color: rgba(245, 245, 245, 0.445);
+}
+
+.price{
+    font-weight: bolder;
+    text-align: center;
+}
+.p{
+    text-align: center;
+}
+ .ig{
+    height: 150px;
+    padding: 10px;
+}
+
+.ig:hover{
+    height: 160px;
+    cursor: pointer;
+
+}
+/* .cdv{
+    border: 1px solid green;
+    
+} */
+
+.crtb{
+    background: none !important;
+    color: #666 !important;
+    border-color: #ddd !important;
+    font-weight: bold !important;
+}
+.crtb:hover{
+    background-color: rgb(62, 195, 82) !important;
+    color: white !important;
+    font-size: 14px;
+    border: none;
+}
+
+/* usernavbar */
+/* Products */
+
+.hda {
+	border: px solid white;
+	display: flex;
+}
+.src::placeholder{
+	background-color: white;
+	color: #000;
+	
 }
 .anmol{
 	border: 2px solid white;
 }
+.set-bg-traineradd{
+	background-image: url('../img/ttrainer.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
 .set-bg-product{
 	background-image: url('../img/Product/product.jpg');
 	background-repeat: no-repeat;

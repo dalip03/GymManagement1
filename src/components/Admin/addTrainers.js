@@ -5,7 +5,7 @@ import { db } from "../Firebase/firebase";
 import firebase from "firebase";
 import Navbar from "../Navbar";
 
-export default function AddClients() {
+export default function AddTrainers() {
   var navi = useNavigate();
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
@@ -20,11 +20,9 @@ export default function AddClients() {
   const [weight, setweight] = useState("");
 
 
-
-
-  const addClient = (e) => {
+  const addTrainer = (e) => {
     // var st_ref = Storage.ref("/Products/" + img.name).put(img);
-    db.collection("Clients")
+    db.collection("Trainers")
       .add({
         Name: fname,
         Lname: lname,
@@ -34,13 +32,13 @@ export default function AddClients() {
         Blood: blood,
         Batch: batch,
         Date:date,
-        Subscription:subscription,
+        // Subscription:subscription,
         Height:height,
         Weight:weight,
         TimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then(function (sic) {
-        alert("Client Added");
+        alert("Trainer Added");
         e.target.reset();
       });
   };
@@ -54,7 +52,7 @@ export default function AddClients() {
           <div class="row">
             <div class="col-lg-12 text-center">
               <div class="breadcrumb-text">
-                <h2>Add Clients</h2>
+                <h2>Add Trainers</h2>
                 <div class="bt-option">
                   <a href="/">Home</a>
                   <span>Ragister Users</span>
@@ -71,7 +69,7 @@ export default function AddClients() {
           <div class="row">
             <div class="dva col-lg-4">
               {/* <form> */}
-              <h2>Ragister Users</h2>
+              <h2>Ragister Trainer</h2>
               <div class="form-group">
                 <input
                   class="form-control"
@@ -142,11 +140,11 @@ export default function AddClients() {
                   onChange={(e) => setdate(e.target.value)}
                   value={date}
                   type="date"
-                  placeholder="Registration Date* "
+                  placeholder="Date of Joining * "
                 />
               </div>
 
-              <div class="form-group">
+              {/* <div class="form-group">
                 <input
                   class="form-control"
                   id="add"
@@ -157,7 +155,7 @@ export default function AddClients() {
                   type="number"
                   placeholder="Subscription Package* "
                 />
-              </div>
+              </div> */}
 
               <div class="form-group">
                 <input
@@ -213,7 +211,7 @@ export default function AddClients() {
               </div>
 
               <button
-                onClick={addClient}
+                onClick={addTrainer}
                 className="btn btn-primary form-control"
               >
                 Add Client

@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../AdminNavbar";
-import { auth, db } from "../Firebase/firebase";
+import { auth, db, storage } from "../Firebase/firebase";
 import firebase  from "firebase";
+import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 
 function Admin() {
 
   var navi = useNavigate()
   const [img, setimg] = useState("")
+  const[url,  seturl] = useState('')
   const [name, setname] = useState("")
-  const [dec, setdec] = useState("")
+  const [quantity, setquantity] = useState("")
   const [price, setprice] = useState("")
   const [type, settype] = useState("")
 
 const add = (e) => {
-    var st_ref = Storage.ref("/Products/" + img.name).put(img);
+    var st_ref = storage.ref("/Products/" + img.name).put(img);
     st_ref.then(function (succ) {
       st_ref.snapshot.ref.getDownloadURL().then(function (suc) {
         db.collection("Products")
           .add({
             Name: name,
             Type: type,
-            Dec:  dec,
+            Quantity: quantity,
             Price: price,
+            // Img:url,
             TimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
             
           })
@@ -33,6 +36,25 @@ const add = (e) => {
       });
     });
   };
+
+
+  // fetch data 
+
+  
+  const [data, setdata] = useState([])
+  function getproducts() {
+      var ar = []
+      db.collection('Products').onSnapshot((succ) => {
+          succ.forEach((abc) => {
+              ar.push(abc)
+              console.log(abc.data())
+          })
+          setdata(ar)
+      })
+  }
+  useEffect(() => {
+      getproducts()
+  }, [])
 
   return (
     <>
@@ -68,6 +90,7 @@ const add = (e) => {
                 <div className="form-group">
                   <input
                     type="file"
+                    // value={img}
                     className=" form-control"
                     placeholder="Product Image*"
                     onChange={(e) => setimg(e.target.files[0])}                    
@@ -86,10 +109,10 @@ const add = (e) => {
                 <div className="form-group">
                   <input
                     type="text"
-                    value={dec}
+                    value={quantity}
                     className=" form-control"
-                    placeholder="Description*"
-                    onChange={(e) => setdec(e.target.value)}
+                    placeholder="Quantity*" 
+                    onChange={(e) => setquantity(e.target.value)}
 
                   />
                 </div>
@@ -107,12 +130,12 @@ const add = (e) => {
                   value={type}     
                    onChange={(e) => settype(e.target.value)}
 >
-                    <option  value={"Shirt"}> Types </option>
-                    <option value={"Pent"}> Pre Workout </option>
-                    <option value={"Trouser"}> Protien</option>
-                    <option value={"T-Shirt"}> Mass Gainer</option>
-                    <option value={"Shoe"}> Carnitine</option>
-                    <option value={"Aceesories"}> Shaker</option>
+                    <option  value={"type"}> Types </option>
+                    <option value={"Pre  Workout"}> Pre Workout </option>
+                    <option value={"Protien"}> Protien</option>
+                    <option value={"Mass Gainer"}> Mass Gainer</option>
+                    <option value={"Carnitine"}> Carnitine</option>
+                    <option value={"Shaker"}> Shaker</option>
                   </select>
                 </div>
                 <div className="form-group">
@@ -128,58 +151,29 @@ const add = (e) => {
 {/* form 2 */}
 <div className="col-lg-12 fm2">
        <div className="col-lg-12 adf2">
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th>Product Image</th>
-              <th>Product Name</th>
-              <th>Discription</th>
-              <th>Price</th>
-              <th>Type</th>
-              <th colSpan={2}>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            {/* {data.map((row) => ( */}
-            <tr >
-              {/* <tr key={row.id}> */}
-                <td className="imm">
-                <img  className=" img-responsive" />
-
-                  {/* <img src={row.data().Image} className=" img-responsive" /> */}
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                {/* <td>{row.data().Name}</td>
-                <td>{row.data().Description}</td>
-                <td>{row.data().Price}</td>
-                <td>{row.data().Type}</td>
-                <td> */}
-                  <button
-                    className="btn btn-danger"
-                    // onClick={() => del(row.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-success"
-                    data-toggle="modal"
-                    data-target="#mymodal"
-                    // onClick={() => edit(row.id)}
-                  >
-                    Edit
-                  </button>
-                </td>
-              </tr>
-            {/* ))} */}
-          </tbody>
-        </table>
+       <Table  className='anmol'>
+                            <TableHead >
+                                <TableRow>
+                                    <TableCell style={{color:'white'}}><b>Image</b></TableCell>
+                                    <TableCell style={{color:'white'}}><b>Name</b></TableCell>
+                                    <TableCell style={{color:'white'}}><b>Quantity</b></TableCell>
+                                    <TableCell style={{color:'white'}}><b>Price</b></TableCell>
+                                    <TableCell style={{color:'white'}}><b>Type</b></TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {data.map((val) => (
+                                    <TableRow>
+                                        <TableCell style={{color:'white'}}>{val.data().Image}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data().Name}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data().Quantity}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data().Price}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data().Type}</TableCell>
+                                
+                                    </TableRow>
+                                 ))} 
+                            </TableBody>
+                        </Table>
       </div>
 
       <div className="modal fade" id="mymodal">

@@ -35,7 +35,7 @@ function Navbar(){
                 <li><a href="/classes">Classes</a></li>
                 <li><a href="/services">Services</a></li>
                 <li><a href="/team">Trainers</a></li>
-                <li><a href="/product"></a>Products</li>
+                <li><a href="/user"></a>Products</li>
                 <li><a href='/gallery'>Gallery</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="dropdown">
@@ -76,7 +76,7 @@ function Navbar(){
                             <li><a href="/classes">Classes</a></li>
                             <li><a href="/services">Services</a></li>
                             <li><a href="/team">Trainers</a></li>
-                            <li><a href="/product">Products</a></li>
+                            <li><a href="/user">Products</a></li>
                             <li><a href="/gallery">Gallery</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">

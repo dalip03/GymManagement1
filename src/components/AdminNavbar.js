@@ -32,10 +32,11 @@ function AdminNavbar(){
             <ul>
             <li ><a href="/">Home</a></li>
                             <li><a href="/addClient">AddClients</a></li>
+                            <li><a href="/addTrainer">AddTrainers</a></li>
                             <li><a href="/admin">Admin</a></li>
                             <li><a href="/client">Clients</a></li>
-                            <li><a href="/user">Users</a></li>
-                            <li><a href="/product">Products</a></li>
+                            <li><a href="/trainers">Trainers</a></li>
+                            <li><a href="/user">Products</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -64,10 +65,11 @@ function AdminNavbar(){
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
                             <li><a href="/addClient">AddClients</a></li>
-                            <li><a href="/admin">Admin</a></li>
+                            <li><a href="/addTrainer">AddTrainers</a></li>
+                            <li><a href="/admin">Add Products</a></li>
                             <li><a href="/client">Clients</a></li>
-                            <li><a href="/user">Users</a></li>
-                            <li><a href="/product">Products</a></li>
+                            <li><a href="/trainers">Trainers</a></li>
+                            <li><a href="/user">Products</a></li>
                           
                         </ul>
                     </nav>

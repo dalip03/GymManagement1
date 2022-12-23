@@ -20,6 +20,10 @@ import User from './components/User';
 import AddClients from './components/Admin/addClients';
 import Client from './components/Admin/clients';
 import AdminLogin from './components/AdminLogin';
+import Trainers from './components/Admin/Trainers';
+import addTrainers from './components/Admin/addTrainers';
+import AddTrainers from './components/Admin/addTrainers';
+
 
 // import Login from './components/Login/login';
 // import SignInForm from './components/Login/SignInForm';
@@ -46,8 +50,8 @@ function App() {
       <Route path='/user' element={<User/>}/>
       <Route path='/addClient' element={<AddClients/>}/>
       <Route path='/client' element={<Client/>}/>
-
-
+      <Route path='/addTrainer' element={<AddTrainers/>}/>
+      <Route path='/trainers' element={<Trainers/>}/>
 
 
       {/* <Route path="/login" element={<SignInForm/>}/> */}

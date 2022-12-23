@@ -1,151 +1,305 @@
-<table className="table table-bordered">
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>whatsapp No.</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Blood Group</th>
-    <th>Batch </th>
-    <th colSpan={2}>Action</th>
-  </tr>
-</thead>
-<tbody>
-
-{data.map((val) =>( 
-<tr >
-
- <td>{val.data().name}</td>
- <td>{val.data().mobile}</td>
- <td>{val.data().email}</td>
- <td>{val.data().address}</td>
- <td>{val.data().blood}</td>
- <td>{val.data().batch}</td>
- <td>
-   <button
-     className="btn btn-danger"
-     // onClick={() => del(row.id)}
-   >
-     Delete
-   </button>
- </td>
- <td>
-   <button
-     className="btn btn-success"
-     data-toggle="modal"
-     data-target="#mymodal"
-     // onClick={() => edit(row.id)}
-   >
-     Edit
-   </button>
- </td>
-</tr>
-))}
- 
 
 
-  {/* ))} */}
-</tbody>
-</table>
-</div>
+import React from "react";
+import {
+    Button,
+    Card,
+    CardContent,
+    CardMedia,
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    Grid,
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    TextField,
+    Typography,
+} from "@mui/material";
+import { useEffect } from "react";
+import { useState } from "react";
+import { db } from "./firebase";
+import Navbar2 from "./navbar2";
+import { useNavigate } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
 
-<div className="modal fade" id="mymodal">
-<div className="modal-dialog">
-<div className="modal-content">
-  <div className="modal-header">
-    <div className="modal-title">
-      <button className="close" data-dismiss="modal">
-        x
-      </button>
-      <h2>edit form</h2>
-    </div>
-    <div className="modal-body">
-      <form>
-      {/* <form onSubmit={editform}> */}
-        <div className="form-group">
-          <input
-            type="file"
-            name="name"
-            className=" form-control"
-            placeholder="Product Image*"
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            value={0}
-            // value={nm}
+export default function StdAllbook() {
+    var navi = useNavigate();
+    const [search, setSearch] = useState(""); //first step
+    const [searchData, setSearchData] = useState([]); //second step
+    const [book, setbook] = useState([]); //change its place in third step
+    var std1 = localStorage.getItem("StudentID");
+    const [issued, setIssued] = useState([]);
 
-            name="whatsapp"
-            className="  form-control"
-            placeholder="Product Name*"
-            // <form className=" col-lg-12 adform">
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="email"
-            value={1}
-            // value={desc}
-            className=" form-control"
-            placeholder="Discription*"
-            // onChange={(e) => setdesc(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="address"
-            value={10}
-            // value={price}
-            className=" form-control"
-            placeholder=" Price"
-            // onChange={(e) => setprice(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <select
-            className="form-control"
-            name="blood"
-            value={1}
-            // value={type}
-            // onChange={(e) => settype(e.target.value)}
-          >
-            <option value={"group"}> Blood Groupx </option>
-            <option value={"A+"}> A+ </option>
-            <option value={"AB-"}> AB-</option>
-            <option value={"O+"}> O+</option>
-            <option value={"O-"}> O-</option>
-            <option value={"AB+"}> AB+</option>
-            <option value={"B-"}> B-</option>
-            <option value={"B+"}> B+</option>
-            <option value={"A-"}> A-</option>
+    useEffect(() => {
+        if (!std1) {
+            alert("login first");
+            navi("/");
+        }
+    }, []);
 
-          </select>
-        </div>
-        <div className="form-group">
-          <select
-            className="form-control"
-            name="blood"
-            value={1}
-            // value={type}
-            // onChange={(e) => settype(e.target.value)}
-          >
-            <option value={"batch"}> Batch </option>
-            <option value={"Pent"}> Morning </option>
-            <option value={"Trouser"}> Afternoon</option>
-            <option value={"T-Shirt"}> Evening</option>
-          </select>
-        </div>
-        {/* <button type="button" className=" btn btn-success"> Submit </button> */}
-        <input
-          className=" btn btn-success"
-          type={"submit"}
-          value="edit form"
-        />
-      </form>
-    </div>
-  </div>
-</div>
-</div>
+    console.log({ std1 });
+
+    //fourth step to change the functionality of getting data
+
+    function getdata() {
+        var ar = [];
+        db.collection("Added_Books")
+            .orderBy("Date", "desc")
+            .onSnapshot((succ) => {
+                //from here
+                setbook(
+                    succ.docs.map((item) => ({
+                        data: item.data(),
+                        id: item.id,
+                    }))
+                );
+            }); //to here
+    }
+    useEffect(() => {
+        getdata();
+    }, []);
+
+    //fifth step to get all the searching books
+    const getSearchBook = () => {
+        if (search) {
+            const newData = book.filter((item) => {
+                const textData = search.toLowerCase();
+                if (item.data.Title.toLowerCase().startsWith(textData)) {
+                    return item;
+                } else if (item.data.Publisher.toLowerCase().startsWith(textData)) {
+                    return item
+                }
+                else if (item.data.Author.toLowerCase().startsWith(textData)) {
+                    return item
+                } else {
+                    return null
+                }
+            });
+            setSearchData(newData);
+            console.log(newData);
+        } else {
+            setSearchData([]);
+            console.log("no data");
+        }
+    };
+
+    //sixth step
+    useEffect(() => {
+        getSearchBook();
+    }, [search]);
+
+    const [fnm, setfnm] = useState([]);
+    const [lnm, setlnm] = useState("");
+    const [year, setyear] = useState();
+    const [clgId, setclgId] = useState();
+    const [cls, setcls] = useState("");
+    const [s_id, sets_id] = useState("");
+
+    //getting student
+    function getstd() {
+        if (std1) {
+            db.collection("Add_Std")
+                .where("StdId", "==", std1)
+                .onSnapshot((succ) => {
+                    setfnm(
+                        succ.docs.map((item) => ({
+                            data: item.data(),
+                        }))
+                    );
+                    // setlnm(succ.data().LastName);
+                    // setyear(succ.data().Year);
+                    // setcls(succ.data().Class);
+                    // sets_id(succ.data().StdId);
+                    // setclgId(succ.data().ClgId);
+                });
+        }
+    }
+
+    const getIssuesReq = () => {
+        db.collection("IssuesReq").onSnapshot((get) => {
+            setIssued(
+                get.docs.map((item) => ({
+                    data: item.data(),
+                    id: item.id,
+                }))
+            );
+        });
+    };
+
+    useEffect(() => {
+        getstd();
+        getIssuesReq();
+    }, []);
+
+    const [req, setreq] = useState(false);
+
+    function issue(x) {
+        if (issued.length >= 4) {
+            alert("you have already requested 4 books");
+        } else {
+            var sDetails = {
+                Name: fnm[0].data.FirstName + " " + fnm[0].data.LastName,
+                SYear: fnm[0].data.Year,
+                ClgId: fnm[0].data.ClgId,
+                Class: fnm[0].data.Class,
+                StdId: fnm[0].data.StdId,
+            };
+            var allDetails = Object.assign(sDetails, x);
+            console.log(allDetails, x);
+
+            db.collection("IssuesReq")
+                .where("Title", "==", x.data.Title)
+                .get()
+                .then((succ) => {
+                    if (succ.size == 0) {
+                        db.collection("IssuesReq")
+                            .add({
+                                Name: sDetails.Name,
+                                SYear: sDetails.SYear,
+                                ClgId: sDetails.ClgId,
+                                Class: sDetails.Class,
+                                StdId: sDetails.StdId,
+                                Author: x.data.Author,
+                                Image: x.data.Image,
+                                Title: x.data.Title,
+                                BYear: x.data.Year,
+                            })
+                            .then((succc) => {
+                                alert("request sent");
+                            });
+                    } else {
+                        alert("already requested");
+                    }
+                });
+        }
+    }
+    return (
+        <>
+            <Navbar2 />
+            <Grid container className="">
+                <Grid
+                    item
+                    lg={10}
+                    md={10}
+                    sm={12}
+                    xs={12}
+                    sx={{ mt: { md: 10, xs: 10 }, ml: { md: 25, sm: 0 } }}
+                >
+                    <Typography variant="h4">All Available Book</Typography>
+                    <TextField
+                        id="text-field"
+                        placeholder="Search"
+                        variant="outlined"
+                        size="large"
+                        className="srch"
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+
+                    <Paper
+                        className="container1"
+                        elevation={0}
+                        sx={{
+                            height: "calc(100vh - 160px)",
+                            borderTop: "5px solid darkblue",
+                            overflowX: "scroll",
+                        }}
+                    >
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align={"center"}>
+                                        <b>Image</b>
+                                    </TableCell>
+                                    <TableCell align={"center"}>
+                                        <b>Title</b>
+                                    </TableCell>
+                                    <TableCell align={"center"}>
+                                        <b>Author</b>
+                                    </TableCell>
+                                    <TableCell align={"center"}>
+                                        <b>Publisher</b>
+                                    </TableCell>
+                                    <TableCell align={"center"}>
+                                        <b>Year</b>
+                                    </TableCell>
+                                    <TableCell align={"center"}>
+                                        <b>Copies</b>
+                                    </TableCell>
+                                    <TableCell colSpan={2} align={"center"}>
+                                        Action
+                                    </TableCell>
+                                </TableRow>
+                            </TableHead>
+
+                            <TableBody>
+                                {search
+                                    ? searchData.map((val) => (
+                                        <TableRow>
+                                            <TableCell align={"center"}>
+                                                <img src={val.data.Image} height={50} />
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Title}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Author}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Publisher}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Year}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Copies}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <Button onClick={() => issue(val)}>issue</Button>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))
+                                    : book.map((val) => (
+                                        <TableRow>
+                                            <TableCell align={"center"}>
+                                                <img src={val.data.Image} height={50} />
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Title}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Author}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Publisher}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Year}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <p>{val.data.Copies}</p>
+                                            </TableCell>
+                                            <TableCell align={"center"}>
+                                                <Button onClick={() => issue(val)}>issue</Button>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </>
+    );
+}
+
+
+
+
+
+
+
