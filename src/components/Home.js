@@ -37,7 +37,14 @@ function login(){
 
   auth.signInWithEmailAndPassword(email,password).then((user)=>{
    console.log({user})
-   navi('/admin')
+   if(user.size==0){
+    alert('Please signup First')
+    navi('/signup')
+ }else{     
+    alert('Welcome user')
+    navi("/user")
+ }
+  //  navi('/user')
 
   })
   //  console.log('yes')
@@ -78,6 +85,7 @@ function login(){
                       </div>
                       <div className="form-group">
                         <button onClick={login} className="btn btn-primary form-control">
+                          
                           Login
                         </button>
                       </div>
@@ -91,6 +99,13 @@ function login(){
                             {/* end Login */}
               </div>
             </div>
+            {/* <div className="khera1 col-lg-4">
+              <span></span>
+              <span></span>
+              <span></span>
+              Login Here
+            
+            </div> */}
 
           </div>
         </div>

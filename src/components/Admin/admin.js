@@ -9,7 +9,6 @@ function Admin() {
 
   var navi = useNavigate()
   const [img, setimg] = useState("")
-  const[url,  seturl] = useState('')
   const [name, setname] = useState("")
   const [quantity, setquantity] = useState("")
   const [price, setprice] = useState("")
@@ -25,7 +24,7 @@ const add = (e) => {
             Type: type,
             Quantity: quantity,
             Price: price,
-            // Img:url,
+            Image:suc,
             TimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
             
           })
@@ -91,6 +90,7 @@ const add = (e) => {
                   <input
                     type="file"
                     // value={img}
+                    name="img"
                     className=" form-control"
                     placeholder="Product Image*"
                     onChange={(e) => setimg(e.target.files[0])}                    
@@ -164,7 +164,8 @@ const add = (e) => {
                             <TableBody>
                                 {data.map((val) => (
                                     <TableRow>
-                                        <TableCell style={{color:'white'}}>{val.data().Image}</TableCell>
+                                        {/* <TableCell style={{color:'white'}}>{val.data().Image}</TableCell> */}
+                                       <TableCell  style={{height:'50px'}}><img style={{height:50}} src={val.data().Image} className=" img-responsive" /></TableCell> 
                                         <TableCell style={{color:'white'}}>{val.data().Name}</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Quantity}</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Price}</TableCell>
@@ -176,89 +177,7 @@ const add = (e) => {
                         </Table>
       </div>
 
-      <div className="modal fade" id="mymodal">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <div className="modal-title">
-                <button className="close" data-dismiss="modal">
-                  x
-                </button>
-                <h2>edit form</h2>
-              </div>
-              <div className="modal-body">
-                <form>
-                {/* <form onSubmit={editform}> */}
-                  <div className="form-group">
-                    <input
-                      type="file"
-                      name="productImage"
-                      className=" form-control"
-                      placeholder="Product Image*"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      value={0}
-                      // value={nm}
-
-                      name="productName"
-                      className="  form-control"
-                      placeholder="Product Name*"
-                      // <form className=" col-lg-12 adform">
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="discription"
-                      value={1}
-                      // value={desc}
-                      className=" form-control"
-                      placeholder="Discription*"
-                      // onChange={(e) => setdesc(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="Price"
-                      value={10}
-                      // value={price}
-                      className=" form-control"
-                      placeholder=" Price"
-                      // onChange={(e) => setprice(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <select
-                      className="form-control"
-                      name="Type"
-                      value={1}
-                      // value={type}
-                      // onChange={(e) => settype(e.target.value)}
-                    >
-                      <option  value={"Shirt"}> Types </option>
-                    <option value={"Pent"}> Pre Workout </option>
-                    <option value={"Trouser"}> Protien</option>
-                    <option value={"T-Shirt"}> Mass Gainer</option>
-                    <option value={"Shoe"}> Carnitine</option>
-                    <option value={"Aceesories"}> Shaker</option>
-                    </select>
-                  </div>
-                  {/* <button type="button" className=" btn btn-success"> Submit </button> */}
-                  <input
-                    className=" btn btn-success"
-                    type={"submit"}
-                    value="edit form"
-                  />
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
       {/* end form 2 */}
       </div>
             </div>

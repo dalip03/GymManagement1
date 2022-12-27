@@ -133,6 +133,75 @@ ol {
 }
 /* add client end  */
 
+.khera{
+	border-right: .15em solid orange;
+	white-space: nowrap;
+	margin-left: -250px;
+	overflow: hidden;
+	animation: typing 4s steps(16, end),
+	blink-caret .75s step-end infinite;
+	
+}
+
+@keyframes typing{
+	0%{	width: 0;}
+	100%{width: 250px;};
+}
+
+@keyframes blink-caret{
+	0%{border-right-color: white;}
+	100%{border-right-color: red;}	
+}
+
+.khera1{
+	position: relative;
+	display: inline-block;
+	padding: 30px 60px;
+	border-radius: 4px;
+	color: #03e9f4;
+	text-transform: uppercase;
+	overflow: hidden;
+	margin: 25px;
+	border: 2px solid #301171;
+	transition: all 0.1s linear;
+}	
+
+.khera1:hover{
+	border: 1px solid transparent;
+}
+.khera1:hover span{
+	position: absolute;
+	display: block;
+}
+.khera1:hover span:nth-child(1){
+	filter: hue-rotate(0deg);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(90deg,transparent, #3a86ff);
+	animation: animatel 1s linear infinite;
+}
+@keyframes animatel {
+	0%{
+		left: -100%
+	}
+	50%,
+	100%{
+		left: 100%;
+	}}
+
+.khera1:hover span::nth-child(2){
+		filter:hue-rotate(60deg);
+		top: -100%;
+		right: 0;
+		width: 3px;
+		height: 100%;
+		background-color: linear-gradient(180deg, #3a86ff);
+		animation: animate2 1s linear infinite;
+		animation-delay: 0.25s;
+	}
+
 /* Admin start */
 
 .rw{
@@ -149,7 +218,11 @@ ol {
 }
 .fm2{
 	margin-top: 20px;
+	overflow-x: scroll;
 	/* border: 1px solid white; */
+}
+.anmol1{
+	overflow-x: scroll;
 }
 .adform{
 	background-color: #000000;
@@ -177,13 +250,22 @@ tr{
 	grid-template-columns:repeat(4, minmax(0, 1fr));
 }
 
+.incr{
+	/* border: 1px solid green !important; */
+}
+.btnd{
+	color: white;
+}
+.btndq{
+	color: white;
+}
 /* Admi End  */
 
 /* User css */
 .dv{
     /* background-color: greenyellow; */
-    border: 1px solid rgba(0, 0, 0, 0.045);
-    height: 350px;
+    border: 1px solid rgba(235, 228, 228, 0.491);
+    height: 400px;
 
 }
 
@@ -206,7 +288,7 @@ tr{
     overflow: hidden;
     display: flex;
     justify-content: center;
-	background-color: white;
+	background-color: rgb(255, 255, 255);
 }
 .box1{
     /* border: 2px solid rgb(213, 197, 197, .3); */
@@ -241,10 +323,12 @@ tr{
     cursor: pointer;
 
 }
-/* .cdv{
-    border: 1px solid green;
+.cdv{
+    /* border: 1px solid green; */
+	display: flex;
+	justify-content: center;
     
-} */
+}
 
 .crtb{
     background: none !important;
@@ -283,6 +367,12 @@ tr{
 
 .set-bg-product{
 	background-image: url('../img/Product/product.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.set-bg-cart{
+	background-image: url('../img/blackcart.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position:  center;
@@ -730,6 +820,7 @@ text-decoration: underline;
 	background-position: top center;
 }
 .spad {
+	/* background-color: whitesmoke; */
 	padding-top: 100px;
 	padding-bottom: 100px;
 }

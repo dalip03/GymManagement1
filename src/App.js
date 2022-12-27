@@ -23,6 +23,7 @@ import AdminLogin from './components/AdminLogin';
 import Trainers from './components/Admin/Trainers';
 import addTrainers from './components/Admin/addTrainers';
 import AddTrainers from './components/Admin/addTrainers';
+import Cart from './components/Admin/Cart';
 
 
 // import Login from './components/Login/login';
@@ -52,6 +53,8 @@ function App() {
       <Route path='/client' element={<Client/>}/>
       <Route path='/addTrainer' element={<AddTrainers/>}/>
       <Route path='/trainers' element={<Trainers/>}/>
+      <Route path='/cart' element={<Cart/>}/>
+
 
 
       {/* <Route path="/login" element={<SignInForm/>}/> */}

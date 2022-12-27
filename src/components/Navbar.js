@@ -9,6 +9,8 @@ import '../Asset/css/magnific-popup.css';
 import '../Asset/css/slicknav.min.css';
 
 import logo from '../Asset/img/logo.png';
+import User from "./User";
+import { Link } from "@mui/material";
 
 
 
@@ -78,6 +80,7 @@ function Navbar(){
                             <li><a href="/team">Trainers</a></li>
                             <li><a href="/user">Products</a></li>
                             <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/cart">MyCart</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="/bmi">Bmi calculate</a></li>
@@ -93,7 +96,7 @@ function Navbar(){
                     {/* search */}
                     <div class="top-option">
                         <div class="to-search search-switch">
-                            <i class="fa fa-search"></i>
+                        <Link to="/cart" > <span style={{color:'white'}}> Cart</span></Link>
                         </div>
                         <div class="to-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>

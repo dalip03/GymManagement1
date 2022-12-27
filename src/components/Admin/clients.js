@@ -1,8 +1,9 @@
-import { Table, TableBody, TableCell, TableHead, TableRow, TextField } from '@mui/material';
+import { Delete, Edit } from '@mui/icons-material';
+import { Button, MenuItem, Select, Table, TableBody, TableCell, TableHead, TableRow, TextField } from '@mui/material';
 import { data } from 'jquery';
 import React, { useEffect, useState } from 'react'
 import AdminNavbar from '../AdminNavbar';
-import { db } from '../Firebase/firebase';
+import { db, storage } from '../Firebase/firebase';
 
 function Client(){
 
@@ -18,6 +19,13 @@ function Client(){
       })
   }
   
+// delete
+
+
+// edit
+
+
+
 //   db.collection("Clients")
 //   .orderBy("Date", "desc")
 //   .onSnapshot((succ) => {
@@ -132,12 +140,13 @@ function Client(){
                                     <TableCell style={{color:'white'}}><b>Height</b></TableCell>
                                     <TableCell style={{color:'white'}}><b>Weight</b></TableCell>
                                     <TableCell style={{color:'white'}}><b>batch</b></TableCell>
+                                    <TableCell colSpan={2} style={{color:'white'}}>Action</TableCell>
 
                                 </TableRow>
                             </TableHead>
-                            <TableBody>
+                            <TableBody className='anmol1'>
                                 {data.map((val) => (
-                                    <TableRow>
+                                    <TableRow >
                                         <TableCell style={{color:'white'}}>{val.data().Name}</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Lname}</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Mobile}</TableCell>
@@ -154,46 +163,13 @@ function Client(){
                                  ))} 
                             </TableBody>
 
-{/* <TableBody>
-                                {search
-                                    ? searchData.map((val) => (
-                                      <TableRow>
-                                      <TableCell style={{color:'white'}}>{val.data().Name}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Lname}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Mobile}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Email}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Address}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Blood}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Date}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Subscription}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Height}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Weight}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Batch}</TableCell>
-
-                                  </TableRow>
-                                    ))
-                                    : data.map((val) => (
-                                      <TableRow>
-                                      <TableCell style={{color:'white'}}>{val.data().Name}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Lname}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Mobile}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Email}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Address}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Blood}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Date}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Subscription}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Height}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Weight}</TableCell>
-                                      <TableCell style={{color:'white'}}>{val.data().Batch}</TableCell>
-
-                                  </TableRow> */}
-                                    {/* ))}
-                            </TableBody> */}
-
                         </Table>
+
       </div>
       {/* end form 2 */}
+
       </div>
+     
           </div>
           </div>
           </section>

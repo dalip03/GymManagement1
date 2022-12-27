@@ -146,8 +146,8 @@ function Trainers(){
                                         <TableCell style={{color:'white'}}>{val.data().Blood}</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Date}</TableCell>
                                         {/* <TableCell style={{color:'white'}}>{val.data().Subscription}</TableCell> */}
-                                        <TableCell style={{color:'white'}}>{val.data().Height}</TableCell>
-                                        <TableCell style={{color:'white'}}>{val.data().Weight}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data().Height}&nbsp;cm</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data().Weight}&nbsp;kg</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Batch}</TableCell>
 
                                     </TableRow>
