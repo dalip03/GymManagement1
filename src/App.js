@@ -24,6 +24,9 @@ import Trainers from './components/Admin/Trainers';
 import addTrainers from './components/Admin/addTrainers';
 import AddTrainers from './components/Admin/addTrainers';
 import Cart from './components/Admin/Cart';
+import CheckOut from './components/checkout/CheckOut';
+import Payment from './components/checkout/Payment';
+
 
 
 // import Login from './components/Login/login';
@@ -54,6 +57,10 @@ function App() {
       <Route path='/addTrainer' element={<AddTrainers/>}/>
       <Route path='/trainers' element={<Trainers/>}/>
       <Route path='/cart' element={<Cart/>}/>
+      <Route path='/checkout' element={<CheckOut/>}/>
+      <Route path='/payment' element={<Payment/>}/>
+
+
 
 
 

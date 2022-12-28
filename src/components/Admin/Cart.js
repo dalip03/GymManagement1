@@ -3,6 +3,7 @@ import { auth, db } from "../Firebase/firebase";
 import Navbar from "../Navbar";
 import firebase from "firebase";
 import { Button } from "@mui/material";
+import { RemoveShoppingCart, ShoppingCart, ShoppingCartCheckout, ShoppingCartCheckoutOutlined, ShoppingCartCheckoutRounded, ShoppingCartCheckoutTwoTone } from "@mui/icons-material";
 
 function Cart() {
   const [data, setdata] = useState([]);
@@ -12,18 +13,18 @@ function Cart() {
       .doc(auth.currentUser.email)
       .collection("Cart")
       .onSnapshot((succ) => {
-        // var ar = [];
-        // succ.forEach((abc) => {
-        //   ar.push(abc);
-        // });
-        // setdata(ar);
-
         var ar = [];
         succ.forEach((abc) => {
           ar.push(abc);
-          console.log(abc.data());
         });
         setdata(ar);
+
+        // var ar = [];
+        // succ.forEach((abc) => {
+        //   ar.push(abc);
+        //   console.log(abc.data());
+        // });
+        // setdata(ar);
       });
   }
 
@@ -104,15 +105,15 @@ function Cart() {
                   {/* df */}
 
                   <div className="btn btn-group btn1">
-                    <Button 
-                     variant="outlined"
-                    className="btnd" onClick={() => incre(val)}>
+                    <Button
+                      variant="outlined"
+                      className="btnd"
+                      onClick={() => incre(val)}
+                    >
                       +
                     </Button>
 
-                    <Button 
-                     variant="outlined"
-                    className="btnd" disabled>
+                    <Button variant="outlined" className="btnd" disabled>
                       {val.data().Qty}
                     </Button>
 
@@ -124,9 +125,11 @@ function Cart() {
                         ></span>
                       </button>
                     ) : (
-                      <Button 
-                      variant="outlined"
-                      className="btnd" onClick={() => decre(val)}>
+                      <Button
+                        variant="outlined"
+                        className="btnd"
+                        onClick={() => decre(val)}
+                      >
                         -
                       </Button>
                     )}
@@ -134,7 +137,7 @@ function Cart() {
 
                   {/* c */}
 
-                  <h4 className="h">{val.data().Name}</h4>
+                  <h4  className="h">{val.data().Name}</h4>
                   <p className="p">{val.data().Quantity}&nbsp;kg</p>
                   <p className="price">&#x20b9;{val.data().Price}</p>
                   <div className="cdv">
@@ -142,16 +145,47 @@ function Cart() {
                       className="btnd"
                       type="button"
                       variant="contained"
-                      color="primary"
+                      color="warning"
                     >
-                      <span onClick={() => del(val)}>Remove From Cart</span>
+                     <span onClick={() => del(val)}>Remove <RemoveShoppingCart/></span>
                     </Button>
                   </div>
                 </div>
-               
               ))}
             </div>
           </div>
+          {/* bill */}
+
+          <div className="col-lg-12 bill">
+            <div className="col-lg-12 sub">
+              {/* <h1>Price Details</h1> */}
+              <div className="panel panel-default">
+                <div className="panel-heading"><h1>PRICE DETAILS</h1></div>
+                <div className="panel-body">
+                  <p>Price          :</p>
+                  <p>Discount : </p>
+                  <p>Delivery Charges :</p>
+                  <p className="pp"><h2 style={{color:'white'}}>Total Bill :</h2></p>
+                </div>
+                <div className="panel-footer ft">
+                  <Button 
+                   className="pl"
+                   variant="contained" >
+                  CheckOut <ShoppingCartCheckout/></Button>
+                  <Button 
+                   className="pl1"
+                   variant="contained"
+                   color="warning" >
+                  Empty Cart <RemoveShoppingCart/></Button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* </div> */}
+
+          {/* </div> */}
         </div>
       </section>
     </>

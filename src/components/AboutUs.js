@@ -187,79 +187,15 @@ function AboutUs() {
                     </div>
                   </div>
                 </div>
+                
               </div>
             </div>
+            
           </div>
         </div>
+        
       </section>
-      <br/>
-      <div class="section-title">
-                <h2 className="head" style={{ color: "black" }}>
-                  Our Trainers
-                </h2>
-                </div>
-      <Splide>
-        <SplideSlide>
-          <div class="col-lg-4">
-            <div class="ts-item set-bg-team1">
-              <div class="ts_text">
-                <h4>Aditya Roy </h4>
-                <span>Gym Trainer1</span>
-              </div>
-            </div>
-          </div>
-        </SplideSlide>
-        <div class="col-lg-4">
-          <div class="ts-item set-bg-team2">
-            <div class="ts_text">
-              <h4>Gurveer Singh</h4>
-              <span>Gym Trainer 2</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="ts-item set-bg-team3">
-            <div class="ts_text">
-              <h4>Gurtej Singh</h4>
-              <span>Gym Trainer 3</span>
-            </div>
-          </div>
-        </div>
-
-        <SplideSlide>
-          <div class="col-lg-4">
-            <div class="ts-item set-bg-team4">
-              <div class="ts_text">
-                <h4>Harlay</h4>
-                <span>Gym Trainer 4</span>
-              </div>
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide>
-          <div class="col-lg-4">
-            <div class="ts-item set-bg-team5">
-              <div class="ts_text">
-                <h4>Vansh khatri</h4>
-                <span>Gym Trainer 5</span>
-              </div>
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide>
-          <div class="col-lg-4">
-            <div class="ts-item set-bg-team6">
-              <div class="ts_text">
-                <h4>Veeru </h4>
-                <span>Gym Trainer 6</span>
-              </div>
-            </div>
-          </div>
-        </SplideSlide>
-      </Splide>
-
-      {/* team end */}
+     
 
       <GetInTouch />
       <Footer />

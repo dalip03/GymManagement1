@@ -4,6 +4,8 @@ import AdminNavbar from "./AdminNavbar";
 import { auth, db, storage } from "./Firebase/firebase";
 import firebase from "firebase";
 import Navbar from "./Navbar";
+import { AddShoppingCart, ShoppingCart } from "@mui/icons-material";
+import { Button } from "@mui/material";
 
 function User() {
   // snapshot
@@ -110,10 +112,13 @@ function addcart(x){
                 <p className="p" >{val.data().Quantity}&nbsp;kg</p>
                 <p className="price" >&#x20b9;{val.data().Price}</p>
                 <div className="cdv">
-                  <button onClick={()=> addcart(val)} className="btn btn-warning form-control crtb">
-                    {" "}
-                    Add to Cart{" "}
-                  </button>
+                  <Button onClick={()=> addcart(val)}
+                      className="crtb"
+                      type="button"
+                      variant="contained"
+                      color="warning" >
+                      Add &nbsp; &nbsp;&nbsp;&nbsp; <AddShoppingCart/>
+                  </Button>
                 </div>
               </div>
 ))}

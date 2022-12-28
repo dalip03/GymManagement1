@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./footer";
 import {  auth, db  } from "./Firebase/firebase";
 import { Link, useNavigate } from "react-router-dom";
+import { EmailOutlined, LoginOutlined } from "@mui/icons-material";
 
 function Home() {
   
@@ -66,13 +67,14 @@ function login(){
               <div class="hero-text">
                   <div className="fmm col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-2 col-sm-8  col-sm-offset-2 col-xs-12">
                    <div>
-                      <h2>Login Here</h2>
+                      <h2>Login Here<LoginOutlined/> </h2>
                       <div className="form-group">
                         <input
                          onChange={(a) => setEmail(a.target.value)}
                           type="email"
                           className="form-control"
                           placeholder="E-mail"
+                          
                         ></input>
                       </div>
                       <div className="form-group">
@@ -85,8 +87,9 @@ function login(){
                       </div>
                       <div className="form-group">
                         <button onClick={login} className="btn btn-primary form-control">
-                          
-                          Login
+                        Login &nbsp;
+                        <LoginOutlined/>
+                         
                         </button>
                       </div>
                       <div className="form-group">

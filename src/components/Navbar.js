@@ -10,7 +10,8 @@ import '../Asset/css/slicknav.min.css';
 
 import logo from '../Asset/img/logo.png';
 import User from "./User";
-import { Link } from "@mui/material";
+import { Badge, Button, IconButton, Link } from "@mui/material";
+import { Login, LoginOutlined, LogoutOutlined, ShoppingCart } from "@mui/icons-material";
 
 
 
@@ -28,7 +29,11 @@ function Navbar(){
             <i class="fa fa-close"></i>
         </div>
         <div class="canvas-search search-switch">
-            <i class="fa fa-search"></i>
+        <Button color="warning" component={Link} to='/cart'>
+                  <Badge badgeContent={1} color="secondary">
+                      <ShoppingCart />
+                  </Badge>
+                </Button>
         </div>
         <nav class="canvas-menu mobile-menu">
             <ul>
@@ -49,12 +54,17 @@ function Navbar(){
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
-        <div id="mobile-menu-wrap"></div>
+        <div id="mobile-menu-wrap">
+     
+        </div>
         <div class="canvas-social">
-            <a href="https://www.linkedin.com/in/dalip-divaker-077a021b5/?originalSubdomain=in"><i class="fa fa-facebook"></i></a>
+        {/* <Button color="success"> <LoginOutlined /></Button> */}
+        <Button color="success">LogOut<LogoutOutlined /></Button>
+
+            {/* <a href="https://www.linkedin.com/in/dalip-divaker-077a021b5/?originalSubdomain=in"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-youtube-play"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a> */}
         </div>
     </div>
     {/* <!-- Offcanvas Menu Section End --> */}
@@ -96,13 +106,23 @@ function Navbar(){
                     {/* search */}
                     <div class="top-option">
                         <div class="to-search search-switch">
-                        <Link to="/cart" > <span style={{color:'white'}}> Cart</span></Link>
+                        <IconButton color="warning">
+                  <Badge badgeContent={1} color="secondary">
+                    <Link to="/cart">
+                      <ShoppingCart />
+                    </Link>
+                  </Badge>
+                </IconButton>
                         </div>
                         <div class="to-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+
+                            {/* <Button color="success"> LogIn <LoginOutlined /></Button> */}
+                            <Button color="error"> LogOut <LogoutOutlined /></Button>
+
+                            {/* <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a> */}
                         </div>
                     </div>
                 </div>
