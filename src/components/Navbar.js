@@ -29,11 +29,13 @@ function Navbar(){
             <i class="fa fa-close"></i>
         </div>
         <div class="canvas-search search-switch">
-        <Button color="warning" component={Link} to='/cart'>
+        <IconButton color="warning">
                   <Badge badgeContent={1} color="secondary">
+                    <Link to="/cart">
                       <ShoppingCart />
+                    </Link>
                   </Badge>
-                </Button>
+                </IconButton>   
         </div>
         <nav class="canvas-menu mobile-menu">
             <ul>
