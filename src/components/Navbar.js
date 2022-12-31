@@ -78,7 +78,7 @@ function Navbar(){
               <div class="col-lg-3">
                     <div class="logo">
                         <a href="/">
-                            <img src={logo} alt=""/>
+                            <img className="text-flicker-in-glow" src={logo} alt=""/>
                         </a>
                     </div>
                 </div>

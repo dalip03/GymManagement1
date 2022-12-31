@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { auth, db } from "../Firebase/firebase";
 import Navbar from "../Navbar";
 import firebase from "firebase";
-import { Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import { RemoveShoppingCart, ShoppingCart, ShoppingCartCheckout, ShoppingCartCheckoutOutlined, ShoppingCartCheckoutRounded, ShoppingCartCheckoutTwoTone } from "@mui/icons-material";
 
 function Cart() {
@@ -57,6 +57,9 @@ function Cart() {
   }
 
   function del(x) {
+
+  
+
     // var idd = x.id;
     // console.log(idd);
     // db.collection("Products")
@@ -113,7 +116,7 @@ function Cart() {
                       +
                     </Button>
 
-                    <Button variant="outlined" className="btnd" disabled>
+                      <Button variant="outlined" className="btnd" disabled>
                       {val.data().Qty}
                     </Button>
 
@@ -171,7 +174,10 @@ function Cart() {
                   <Button 
                    className="pl"
                    variant="contained" >
-                  CheckOut <ShoppingCartCheckout/></Button>
+                    <Link to='/checkout'>
+                  CheckOut <ShoppingCartCheckout/>
+                  </Link>
+                  </Button>
                   <Button 
                    className="pl1"
                    variant="contained"
