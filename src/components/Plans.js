@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Footer from './footer';
 import GetInTouch from './getInTouch';
 import Navbar from './Navbar';
@@ -50,7 +51,7 @@ function Plans(){
                             <li>Month to mouth</li>
                             <li>No time restriction</li>
                         </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
+                        <a href="#" class="primary-btn pricing-btn"><Link to='/contact'><span style={{color:'white'}}>Enroll now</span></Link></a>
                         {/* <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> */}
                     </div>
                 </div>
@@ -70,7 +71,7 @@ function Plans(){
                             <li>Month to mouth</li>
                             <li>No time restriction</li>
                         </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
+                        <a href="#" class="primary-btn pricing-btn"><Link to='/contact'><span style={{color:'white'}}>Enroll now</span></Link></a>
                         {/* <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> */}
                     </div>
                 </div>
@@ -90,7 +91,7 @@ function Plans(){
                             <li>Month to mouth</li>
                             <li>No time restriction</li>
                         </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
+                        <a href="#" class="primary-btn pricing-btn"><Link to='/contact'><span style={{color:'white'}}>Enroll now</span></Link></a>
                         {/* <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> */}
                     </div>
                 </div>

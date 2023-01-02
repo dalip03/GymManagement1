@@ -8,29 +8,23 @@ import { RemoveShoppingCart, ShoppingCart, ShoppingCartCheckout, ShoppingCartChe
 function Cart() {
   const [data, setdata] = useState([]);
 
-  function getcart() {
-    db.collection("myCart")
-      .doc(auth.currentUser.email)
-      .collection("Cart")
-      .onSnapshot((succ) => {
-        var ar = [];
-        succ.forEach((abc) => {
-          ar.push(abc);
-        });
-        setdata(ar);
 
-        // var ar = [];
-        // succ.forEach((abc) => {
-        //   ar.push(abc);
-        //   console.log(abc.data());
-        // });
-        // setdata(ar);
-      });
+  function getcart() {
+    db.collection('myCart').doc(auth.currentUser.email).collection('Cart').onSnapshot((get)=>{
+      setdata(get.docs.map((item)=>({
+        data:item.data(),
+        id:item.id
+      })))
+    })
   }
+
+   
 
   useEffect(() => {
     getcart();
-  }, []);
+  }, [auth.currentUser.email]);
+
+  const sum = data.map((item)=>parseInt(item.data.Price)).reduce((partialSum,a)=>partialSum+a,0)
 
   function incre(x) {
     // var idd = x.id;
@@ -45,32 +39,26 @@ function Cart() {
   }
 
   function decre(x) {
-    // var idd = x.id;
-    // console.log(idd);
-    // db.collection("Products")
-    //   .doc(product)
-    //   .collection("mycart")
-    //   .doc(idd)
-    //   .update({
-    //     Qty: firebase.firestore.FieldValue.increment(-1),
-    //   });
+    console.log(x);
+    db.collection("Products")
+    .doc(auth.currentUser.email)
+      .collection("mycart")
+      .update({
+        Qty: firebase.firestore.FieldValue.increment(-1),
+      });
   }
 
   function del(x) {
 
-  
-
-    // var idd = x.id;
-    // console.log(idd);
-    // db.collection("Products")
-    //   .doc(product)
-    //   .collection("mycart")
-    //   .doc(idd)
-    //   .delete()
-    //   .then((succ) => {
-    //     alert("Deleted");
-    //   });
+    console.log(x.id );
+    db.collection("myCart")
+    .doc(auth.currentUser.email)
+      .collection("Cart")
+      .doc(x.id)
+      .delete().then((succ)=>console.log(succ))
   }
+
+  console.log(data);
 
   return (
     <>
@@ -101,7 +89,7 @@ function Cart() {
               {data.map((val) => (
                 <div className="dv col-lg-12 col-md-4 col-sm-6">
                   <div className="box">
-                    <img className="ig" src={val.data().Image} />
+                    <img className="ig" src={val.data.Image} />
                     {/* // <img className="ig" /> */}
                   </div>
 
@@ -117,10 +105,10 @@ function Cart() {
                     </Button>
 
                       <Button variant="outlined" className="btnd" disabled>
-                      {val.data().Qty}
+                      {val.data.Qty}
                     </Button>
 
-                    {val.data().Qty <= 1 ? (
+                    {val.data.Qty <= 1 ? (
                       <button className="btnd">
                         <span
                           className="glyphicon glyphicon-trash"
@@ -140,9 +128,9 @@ function Cart() {
 
                   {/* c */}
 
-                  <h4  className="h">{val.data().Name}</h4>
-                  <p className="p">{val.data().Quantity}&nbsp;kg</p>
-                  <p className="price">&#x20b9;{val.data().Price}</p>
+                  <h4  className="h">{val.data.Name}</h4>
+                  <p className="p">{val.data.Quantity}&nbsp;kg</p>
+                  <p className="price">&#x20b9;{val.data.Price}</p>
                   <div className="cdv">
                     <Button
                       className="btnd"
@@ -150,7 +138,7 @@ function Cart() {
                       variant="contained"
                       color="warning"
                     >
-                     <span onClick={() => del(val)}>Remove <RemoveShoppingCart/></span>
+                     <span onClick={() => del(val)}>Remove<RemoveShoppingCart/></span>
                     </Button>
                   </div>
                 </div>
@@ -165,10 +153,10 @@ function Cart() {
               <div className="panel panel-default">
                 <div className="panel-heading"><h1>PRICE DETAILS</h1></div>
                 <div className="panel-body">
-                  <p>Price          :</p>
-                  <p>Discount : </p>
-                  <p>Delivery Charges :</p>
-                  <p className="pp"><h2 style={{color:'white'}}>Total Bill :</h2></p>
+                  <p>Price:{sum}</p>
+                  <p>Discount : 0%</p>
+                  <p>Delivery Charges : 0</p>
+                  <p className="pp"><h2 style={{color:'white'}}>Total Bill : {sum}</h2></p>
                 </div>
                 <div className="panel-footer ft">
                   <Button 

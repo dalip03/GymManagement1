@@ -28,6 +28,7 @@ import '@splidejs/react-splide/css/sea-green';
 import '@splidejs/react-splide/css/core';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Link } from 'react-router-dom';
 
 function Team (){
     return(
@@ -59,7 +60,7 @@ function Team (){
                     <div class="team-title">
                         <div class="section-title">
                             <span>Our Team</span>
-                            <h2 style={{color:"white"}}>TRAIN WITH EXPERTS</h2>
+                            <h2 style={{color:"white"}}><Link to='/contact'><span style={{color:'white'}}>TRAIN WITH EXPERTS</span></Link></h2>
                         </div>
                         <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a>
                     </div>
