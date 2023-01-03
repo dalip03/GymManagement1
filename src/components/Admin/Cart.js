@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import firebase from "firebase";
 import { Button, Link } from "@mui/material";
 import { RemoveShoppingCart, ShoppingCart, ShoppingCartCheckout, ShoppingCartCheckoutOutlined, ShoppingCartCheckoutRounded, ShoppingCartCheckoutTwoTone } from "@mui/icons-material";
+import CheckOut from "../checkout/CheckOut";
 
 function Cart() {
   const [data, setdata] = useState([]);
@@ -159,13 +160,17 @@ function Cart() {
                   <p className="pp"><h2 style={{color:'white'}}>Total Bill : {sum}</h2></p>
                 </div>
                 <div className="panel-footer ft">
-                  <Button 
+                <Button className="pl" variant="contained">
+                <Link to="/checkout"  > <span style={{color:'white'}}> CHECKOUT <ShoppingCartCheckout/></span></Link>
+                </Button>
+
+                  {/* <Button 
                    className="pl"
                    variant="contained" >
                     <Link to='/checkout'>
                   CheckOut <ShoppingCartCheckout/>
                   </Link>
-                  </Button>
+                  </Button> */}
                   <Button 
                    className="pl1"
                    variant="contained"

@@ -46,6 +46,7 @@ function Navbar(){
                 <li><a href="/team">Trainers</a></li>
                 <li><a href="/user"></a>Products</li>
                 <li><a href='/gallery'>Gallery</a></li>
+                <li><a href="/cart">MyCart</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="dropdown">
                         <li><a href="bmi">Bmi calculate</a></li>
