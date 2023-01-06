@@ -49,6 +49,10 @@ function SignUp(){
 
   auth.createUserWithEmailAndPassword(email,password).then((user)=>{
         console.log({user})
+          //Send email verification link
+        // user.sendEmailVerification()
+          //Show message - "Your account was created - please verify using link in email"
+        // handleStatusMessage('signup successfull')
         navi('/')
     })
 

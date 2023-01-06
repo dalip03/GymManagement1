@@ -160,22 +160,37 @@ function Cart() {
                   <p className="pp"><h2 style={{color:'white'}}>Total Bill : {sum}</h2></p>
                 </div>
                 <div className="panel-footer ft">
-                <Button className="pl" variant="contained">
+                {/* <Button className="pl" variant="contained">
                 <Link to="/checkout"  > <span style={{color:'white'}}> CHECKOUT <ShoppingCartCheckout/></span></Link>
-                </Button>
+                </Button> */}
+
+                {/* <Button><a href ={'/checkout'}>CheckOut</a></Button> */}
+
+                  
+
+                  <Button 
+                   className="pl"
+                   variant="outlined" >
+                    <a style={{textDecoration:'none'}} href={"user"}>
+                  Back 
+                  </a>
+                  </Button>
+
+                  <Button 
+                   className="pl1"
+                   variant="outlined" >
+                    <a style={{textDecoration:'none'}} href={"checkout"}>
+                  CheckOut <ShoppingCartCheckout/>
+                  </a>
+                  </Button>
+
+
 
                   {/* <Button 
-                   className="pl"
-                   variant="contained" >
-                    <Link to='/checkout'>
-                  CheckOut <ShoppingCartCheckout/>
-                  </Link>
-                  </Button> */}
-                  <Button 
                    className="pl1"
                    variant="contained"
                    color="warning" >
-                  Empty Cart <RemoveShoppingCart/></Button>
+                  Empty Cart <RemoveShoppingCart/></Button> */}
 
                 </div>
               </div>

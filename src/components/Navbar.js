@@ -31,9 +31,10 @@ function Navbar(){
         <div class="canvas-search search-switch">
         <IconButton color="warning">
                   <Badge badgeContent={1} color="secondary">
-                    <Link to="/cart">
+                    <a href={"cart"}><ShoppingCart /></a>
+                    {/* <Link to="/cart">
                       <ShoppingCart />
-                    </Link>
+                    </Link> */}
                   </Badge>
                 </IconButton>   
         </div>
@@ -111,9 +112,11 @@ function Navbar(){
                         <div class="to-search search-switch">
                         <IconButton color="warning">
                   <Badge badgeContent={1} color="secondary">
-                    <Link to="/cart">
+                  <a href={"cart"}><ShoppingCart /></a>
+
+                    {/* <Link to="/cart">
                       <ShoppingCart />
-                    </Link>
+                    </Link> */}
                   </Badge>
                 </IconButton>
                         </div>

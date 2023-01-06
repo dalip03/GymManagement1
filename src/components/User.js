@@ -54,7 +54,11 @@ function addcart(x){
         .add(x.data())
         .then(function (sic) {
           alert("Product Added in Cart");
-          x.target.reset(); })
+          x.target.reset(); }
+          ) 
+      
+  // alert("Product Already in Cart")
+
 
     }
 
