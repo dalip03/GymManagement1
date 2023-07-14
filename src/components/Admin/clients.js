@@ -5,7 +5,15 @@ import React, { useEffect, useState } from 'react'
 import AdminNavbar from '../AdminNavbar';
 import { db, storage } from '../Firebase/firebase';
 
+
+// dalip@gmail.com
+// 123456
 function Client(){
+  const [search, setSearch] = useState(""); //first step
+  const [searchData, setSearchData] = useState([]); //second step
+
+  const[client, setclient] = useState()
+
 
   const [data, setdata] = useState([])
   function getissbook() {
@@ -26,17 +34,17 @@ function Client(){
 
 
 
-//   db.collection("Clients")
-//   .orderBy("Date", "desc")
-//   .onSnapshot((succ) => {
-//       //from here
-//       setclient(
-//           succ.docs.map((item) => ({
-//               data: item.data(),
-//               id: item.id,
-//           }))
-//       );
-//   });
+  db.collection("Clients")
+  .orderBy("Date", "desc")
+  .onSnapshot((succ) => {
+      //from here
+      setclient(
+          succ.docs.map((item) => ({
+              data: item.data(),
+              id: item.id,
+          }))
+      );
+  });
 // }
 
 
@@ -47,40 +55,37 @@ function Client(){
 
   // searching start
 
-//   const [search, setSearch] = useState(""); //first step
-//   const [searchData, setSearchData] = useState([]); //second step
-
-//   const[client, setclient] = useState()
+  
     
-//   const getSearchClient = () => {
-//     if (search) {
-//         const newData = client.filter((item) => {
-//             const textData = search.toLowerCase();
-//             if (item.data.Name.toLowerCase().startsWith(textData)) {
-//                 return item;
-//             } else if (item.data.Lname.toLowerCase().startsWith(textData)) {
-//                 return item
-//             }
-//             else if (item.data.Subscription.toLowerCase().startsWith(textData)) {
-//                 return item
-//             }
+  const getSearchClient = () => {
+    if (search) {
+        const newData = client.filter((item) => {
+            const textData = search.toLowerCase();
+            if (item.data.Name.toLowerCase().startsWith(textData)) {
+                return item;
+            } else if (item.data.Lname.toLowerCase().startsWith(textData)) {
+                return item
+            }
+            else if (item.data.Subscription.toLowerCase().startsWith(textData)) {
+                return item
+            }
             
-//             else {
-//                 return null
-//             }
-//         });
-//         setSearchData(newData);
-//         console.log(newData);
-//     } else {
-//         setSearchData([]);
-//         console.log("no data");
-//     }
-// };
+            else {
+                return null
+            }
+        });
+        setSearchData(newData);
+        console.log(newData);
+    } else {
+        setSearchData([]);
+        console.log("no data");
+    }
+};
 
-//sixth step
-// useEffect(() => {
-//     getSearchClient();
-// }, [search]);
+// sixth step
+useEffect(() => {
+    getSearchClient();
+}, [search]);
 
   // end search
 
@@ -120,7 +125,7 @@ function Client(){
                         variant="outlined"
                         size="large"
                         className="srch"
-                        // onChange={(e) => setSearch(e.target.value)}
+                        onChange={(e) => setSearch(e.target.value)}
                     />
                      </div></div> 
       
@@ -145,7 +150,25 @@ function Client(){
                                 </TableRow>
                             </TableHead>
                             <TableBody className='anmol1'>
-                                {data.map((val) => (
+                                {search
+                                ? searchData.map((val) => (
+                                  <TableRow >
+                                        <TableCell style={{color:'white'}}>{val.data.Name}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Lname}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Mobile}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Email}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Address}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Blood}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Date}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Subscription}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Height}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Weight}</TableCell>
+                                        <TableCell style={{color:'white'}}>{val.data.Batch}</TableCell>
+
+                                    </TableRow>
+                                ))
+                                :
+                                data.map((val) => (
                                     <TableRow >
                                         <TableCell style={{color:'white'}}>{val.data().Name}</TableCell>
                                         <TableCell style={{color:'white'}}>{val.data().Lname}</TableCell>

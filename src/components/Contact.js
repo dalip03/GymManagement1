@@ -16,44 +16,37 @@ import Navbar from "./Navbar";
 import Footer from "./footer";
 import GetInTouch from "./getInTouch";
 
-import { axios, db } from '../components/Firebase/firebase'
+import { axios, db } from "../components/Firebase/firebase";
 
 function Contact() {
+  // submit data in backend
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
 
-// submit data in backend
-const handleSubmit = (e) => {
-  e.preventDefault();
-  console.log(e)
+    // add data in firebase
+    var data = new FormData(e.currentTarget);
 
-  // add data in firebase 
-  var data = new FormData(e.currentTarget);
-  
-  var name = data.get('name');
-  var email = data.get('email');
-  var tel = data.get('tel');
-  var message = data.get('message');
+    var name = data.get("name");
+    var email = data.get("email");
+    var tel = data.get("tel");
+    var message = data.get("message");
 
-
- 
-  db.collection("Users")
-    .add({
-      Name: name,
-      Email: email,
-      Tel:tel,
-      Message: message,
-    })
-    .then((succ) => {
-      alert("Your Application is send to Dalip :) ");
-    })
-    .catch((err) => {
-      alert("can't send your Application , please send Again :) ");
-
-
-      
-    });
-
-}
-// end submit data
+    db.collection("Users")
+      .add({
+        Name: name,
+        Email: email,
+        Tel: tel,
+        Message: message,
+      })
+      .then((succ) => {
+        alert("Your Application is send to Dalip :) ");
+      })
+      .catch((err) => {
+        alert("can't send your Application , please send Again :) ");
+      });
+  };
+  // end submit data
 
   return (
     <>
@@ -110,35 +103,16 @@ const handleSubmit = (e) => {
                 </div>
               </div>
             </div>
-            
+
             <div class="col-lg-6">
               <div class="leave-comment">
                 {/* form start */}
 
                 <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                   
-                  />
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                   
-                  />
-                  <input
-                    type="tel"
-                    name="tel"
-                    placeholder="Phone no."
-                   
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Message"
-                   
-                  ></textarea>
+                  <input type="text" name="name" placeholder="Name" />
+                  <input type="text" name="email" placeholder="Email" />
+                  <input type="tel" name="tel" placeholder="Phone no." />
+                  <textarea name="message" placeholder="Message"></textarea>
                   <button type="submit">Submit</button>
                 </form>
 
@@ -148,8 +122,19 @@ const handleSubmit = (e) => {
           </div>
           {/* <!-- Map Section Begin --> */}
           <div class="map">
-            <Iframe
+            {/* <Iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.2310832890685!2d75.84630781505746!3d30.880195935307853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a825313ade647%3A0x8221aeeb0002f9ba!2sANSH%20InfoTech!5e0!3m2!1sen!2sin!4v1670048626206!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></Iframe> */}
+
+            {/* new Auribises */}
+            <Iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.4369848372135!2d75.81978267434438!3d30.902407477414858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a83c442c50729%3A0xd8c600825a973347!2sAuribises%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1686584657138!5m2!1sen!2sin"
               width="600"
               height="450"
               style="border:0;"

@@ -12,6 +12,7 @@ import logo from '../Asset/img/logo.png';
 import User from "./User";
 import { Badge, Button, IconButton, Link } from "@mui/material";
 import { Login, LoginOutlined, LogoutOutlined, ShoppingCart } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -19,7 +20,18 @@ import { Login, LoginOutlined, LogoutOutlined, ShoppingCart } from "@mui/icons-m
 
 
 function Navbar(){
+    const navi = useNavigate();
 
+    var uemail = localStorage.getItem("Id");
+    // console.log(uemail)
+
+    function logout() {
+        localStorage.removeItem("Id")
+        navi("/")
+    }
+    // function login(){
+    //     navi("/")
+    // }
   return(
  <>
 
@@ -63,7 +75,13 @@ function Navbar(){
         </div>
         <div class="canvas-social">
         {/* <Button color="success"> <LoginOutlined /></Button> */}
-        <Button color="success">LogOut<LogoutOutlined /></Button>
+
+        {uemail ?  
+(<Button color="success" onClick={logout}>LogOut<LogoutOutlined /></Button>) 
+:(<Button color="success">LogIn<LoginOutlined /></Button>)}
+        
+       
+        
 
             {/* <a href="https://www.linkedin.com/in/dalip-divaker-077a021b5/?originalSubdomain=in"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -121,9 +139,11 @@ function Navbar(){
                 </IconButton>
                         </div>
                         <div class="to-social">
-
+                        {uemail ?  
+(<Button color="success" onClick={logout}>LogOut<LogoutOutlined /></Button>) 
+:(<Button color="success">LogIn<LoginOutlined /></Button>)}
                             {/* <Button color="success"> LogIn <LoginOutlined /></Button> */}
-                            <Button color="error"> LogOut <LogoutOutlined /></Button>
+                            {/* <Button color="error" onClick={logout}> LogOut <LogoutOutlined /></Button> */}
 
                             {/* <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

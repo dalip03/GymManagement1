@@ -54,7 +54,7 @@ function Payment(){
                     variant="contained"
                     to="/checkout"
                   >
-                    Next
+                    Place Order
                   </Button>
                 </Grid>
             </div>

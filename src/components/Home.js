@@ -9,6 +9,10 @@ import { fontSize } from "@mui/system";
 import Iframe from "react-iframe";
 
 function Home() {
+
+  // var email = localStorage.getItem("Id");
+    // console.log(email)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e)
@@ -75,6 +79,7 @@ function login(){
     alert('Please signup First')
     navi('/signup')
  }else{     
+  localStorage.setItem("Id", email)
     alert('Welcome user')
     navi("/user")
  }
